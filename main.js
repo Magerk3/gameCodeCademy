@@ -57,15 +57,17 @@ class Field {
         this.next()
     }
     randomHole(){
-        let rh =0;
-        let ch =0;
-        if(this.row > this.field.length - 2 && this.column > this.field[0].length - 5){
+        let rh =Math.floor(Math.random()*this.field.length);
+        let ch = Math.floor(Math.random()*this.field[0].length);
+
+
+        /*if(this.row > this.field.length - 2 && this.column > this.field[0].length - 5){
             rh = this.row - Math.floor(Math.random()*10);
             ch = this.column - Math.floor(Math.random()*10);
         }else if( this.row > 2 && this.column > 2){
             rh = this.row + Math.floor(Math.random()*10);
             ch = this.column + Math.floor(Math.random()*10);
-        }
+        }*/
 
         if(this.field[rh][ch] !== '^' && this.field[rh][ch] !== this.field[this.row][this.column]){
             this.field[rh][ch] = 'O'
